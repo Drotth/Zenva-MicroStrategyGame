@@ -14,7 +14,89 @@ public class GameManager : MonoBehaviour
     public int curOxygen;
     public int curEnergy;
 
-    void FixedUpdate(){
-        
+    [Header("Round Resource Increase")]
+    public int foodPerTurn;
+    public int metalPerTurn;
+    public int oxygenPerTurn;
+    public int energyPerTurn;
+
+    public static GameManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
+    {
+        // updating the resource UI
+    }
+
+    public void EndTurn()
+    {
+        // give resources
+        curFood += foodPerTurn;
+        curMetal += metalPerTurn;
+        curOxygen += oxygenPerTurn;
+        curEnergy += energyPerTurn;
+
+        // TODO update resource UI
+
+        curTurn++;
+
+        // TODO enable building buttons
+        // TODO enable usable tiles
+    }
+
+    //called when we click on a building button to place it
+    public void SetPlacingBuilding(BuildingType buildingType)
+    {
+        placingBuilding = true;
+        curSelectedBuilding = buildingType;
+    }
+
+    public void OnCreatedNewBuilding(Building building)
+    {
+        //resource the building may produce
+        if (building.doesProduceResource)
+        {
+            switch (building.productionResource)
+            {
+                case ResourceType.Food:
+                    foodPerTurn += building.productionResourcePerTurn;
+                    break;
+                case ResourceType.Metal:
+                    metalPerTurn += building.productionResourcePerTurn;
+                    break;
+                case ResourceType.Oxygen:
+                    oxygenPerTurn += building.productionResourcePerTurn;
+                    break;
+                case ResourceType.Energy:
+                    energyPerTurn += building.productionResourcePerTurn;
+                    break;
+            }
+        }
+
+        //resource the building may cost
+        if (building.hasMaintenanceCost)
+        {
+            switch (building.maintenanceResource)
+            {
+                case ResourceType.Food:
+                    foodPerTurn -= building.maintenanceResourcePerTurn;
+                    break;
+                case ResourceType.Metal:
+                    metalPerTurn -= building.maintenanceResourcePerTurn;
+                    break;
+                case ResourceType.Oxygen:
+                    oxygenPerTurn -= building.maintenanceResourcePerTurn;
+                    break;
+                case ResourceType.Energy:
+                    energyPerTurn -= building.maintenanceResourcePerTurn;
+                    break;
+            }
+        }
+        placingBuilding = false;
+
+        // TODO update the resource UI
     }
 }

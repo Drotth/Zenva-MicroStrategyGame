@@ -25,10 +25,10 @@ public class Building : MonoBehaviour
     [Header("Production")]
     public bool doesProduceResource;
     public ResourceType productionResource;
-    public int productionResourcePerTrun;
+    public int productionResourcePerTurn;
 
     [Header("Maintenance")]
-    public bool hasMaintenaceCost;
+    public bool hasMaintenanceCost;
     public ResourceType maintenanceResource;
     public int maintenanceResourcePerTurn;
 }
