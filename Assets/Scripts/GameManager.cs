@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int curTurn;
+    public bool placingBuilding;
+    public BuildingType curSelectedBuilding;
 
-    // Update is called once per frame
-    void Update()
-    {
+    [Header("Current Resources")]
+    public int curFood;
+    public int curMetal;
+    public int curOxygen;
+    public int curEnergy;
+
+    void FixedUpdate(){
         
     }
 }
