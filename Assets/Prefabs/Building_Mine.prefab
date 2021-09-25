@@ -98,7 +98,7 @@ MonoBehaviour:
   type: 2
   doesProduceResource: 1
   productionResource: 1
-  productionResourcePerTrun: 1
-  hasMaintenaceCost: 1
+  productionResourcePerTurn: 1
+  hasMaintenanceCost: 1
   maintenanceResource: 3
   maintenanceResourcePerTurn: 1

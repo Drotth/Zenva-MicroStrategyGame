@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
         // enable building buttons
         UI.instance.ToggleBuildingButtons(true);
 
-        // TODO enable usable tiles
+        // enable usable tiles
+        Map.instance.EnableUsableTiles();
     }
 
     //called when we click on a building button to place it

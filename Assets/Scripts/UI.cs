@@ -81,6 +81,5 @@ public class UI : MonoBehaviour
 
         foodAndMetalText.text = food + "\n" + metal;
         oxygenAndEnergyText.text = oxygen + "\n" + energy;
-
     }
 }
