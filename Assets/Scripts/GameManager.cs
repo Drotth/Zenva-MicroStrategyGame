@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // updating the resource UI
+        // updating the UI
+        UI.instance.UpdateResourcetext();
     }
 
     public void EndTurn()
@@ -39,11 +40,14 @@ public class GameManager : MonoBehaviour
         curOxygen += oxygenPerTurn;
         curEnergy += energyPerTurn;
 
-        // TODO update resource UI
+        // update resource UI
+        UI.instance.UpdateResourcetext();
 
         curTurn++;
 
-        // TODO enable building buttons
+        // enable building buttons
+        UI.instance.ToggleBuildingButtons(true);
+
         // TODO enable usable tiles
     }
 
@@ -97,6 +101,7 @@ public class GameManager : MonoBehaviour
         }
         placingBuilding = false;
 
-        // TODO update the resource UI
+        // update the resource UI
+        UI.instance.UpdateResourcetext();
     }
 }

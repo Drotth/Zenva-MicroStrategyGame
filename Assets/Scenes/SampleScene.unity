@@ -1681,6 +1681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187893891}
   - component: {fileID: 187893890}
+  - component: {fileID: 187893892}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -1700,6 +1701,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ff17709bbd07d40a4c28cedab5bed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curTurn: 0
+  placingBuilding: 0
+  curSelectedBuilding: 0
+  curFood: 0
+  curMetal: 0
+  curOxygen: 0
+  curEnergy: 0
+  foodPerTurn: 0
+  metalPerTurn: 0
+  oxygenPerTurn: 0
+  energyPerTurn: 0
 --- !u!4 &187893891
 Transform:
   m_ObjectHideFlags: 0
@@ -1714,6 +1726,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187893892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187893889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f19cdee1d2dfe142af48d6df1e8b198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingButtons: {fileID: 1570991429}
+  foodAndMetalText: {fileID: 247100134}
+  oxygenAndEnergyText: {fileID: 992488962}
+  curTurnText: {fileID: 396545995}
 --- !u!1001 &192449970
 PrefabInstance:
   m_ObjectHideFlags: 0

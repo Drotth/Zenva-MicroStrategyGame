@@ -5,7 +5,7 @@ using UnityEngine;
 public enum BuildingType
 {
     Base,
-    greenhouse,
+    Greenhouse,
     Mine,
     SolarPanel
 }
